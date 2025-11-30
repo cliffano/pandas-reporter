@@ -1,0 +1,28 @@
+# pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals
+import unittest
+import pandas as pd
+from pandasreporter.formatters.text import format_report
+
+
+class TestTextFormatter(unittest.TestCase):
+
+    def test_format_report(self):
+        data = {
+            "Name": ["Barkley", "Pippen", "Robinson"],
+            "DOB": ["19630220", "19650925", "19650806"],
+            "City": ["Philadelphia", "Chicago", "San Antonio"],
+        }
+        data_frame = pd.DataFrame(data)
+        result = format_report(data_frame, {})
+        expected = (
+            "┌──────────┬──────────┬──────────────┐\n"
+            "│ Name     │      DOB │ City         │\n"
+            "├──────────┼──────────┼──────────────┤\n"
+            "│ Barkley  │ 19630220 │ Philadelphia │\n"
+            "├──────────┼──────────┼──────────────┤\n"
+            "│ Pippen   │ 19650925 │ Chicago      │\n"
+            "├──────────┼──────────┼──────────────┤\n"
+            "│ Robinson │ 19650806 │ San Antonio  │\n"
+            "└──────────┴──────────┴──────────────┘"
+        )
+        self.assertEqual(result, expected)
