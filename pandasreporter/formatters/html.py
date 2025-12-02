@@ -9,9 +9,15 @@ from dominate.util import raw
 def format_report(data_frame, opts) -> str:
     """Return the HTML page with table having data frame as content."""
 
-    styled_data_frame = data_frame.style.apply(
-        opts["colour_rows_styler"], axis=1
-    ).set_table_attributes('class="table table-striped table-bordered table-hover"')
+    if opts.get("colour_rows_styler"):
+        styled_data_frame = data_frame.style.apply(
+            opts["colour_rows_styler"], axis=1
+        ).set_table_attributes('class="table table-striped table-bordered table-hover"')
+    else:
+        styled_data_frame = data_frame.style.set_table_attributes(
+            'class="table table-striped table-bordered table-hover"'
+        )
+
     table = styled_data_frame.to_html(doctype_html=False, index=False)
     table = re.sub(r"col_heading", "text-center table-active col_heading", table)
 

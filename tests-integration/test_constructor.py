@@ -6,5 +6,5 @@ from pandasreporter import PandasReporter
 class TestConstructor(unittest.TestCase):
 
     def test_constructor(self):
-        reporter = PandasReporter(out_format="html", max_col_size=80)
-        assert reporter.out_format == "html"
+        reporter = PandasReporter()
+        self.assertIsInstance(reporter, PandasReporter)

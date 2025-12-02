@@ -19,15 +19,15 @@ class TestPandasReporter(unittest.TestCase):
         data_frame = pd.DataFrame(data)
 
         with patch.object(PandasReporter, "report", return_value=None) as mock_report:
-            pandas_reporter = PandasReporter(out_format="html", max_col_size=80)
-            _opts = {"colour_rows_styler": lambda x: [""] * len(x)}
+            pandas_reporter = PandasReporter()
+            _opts = {"colour_rows_styler": lambda x: [""] * len(x), "max_col_size": 80}
             pandas_reporter.report(
                 data_frame,
-                out_file="",
+                "html",
                 opts=_opts,
             )
             mock_report.assert_called_once_with(
                 data_frame,
-                out_file="",
+                "html",
                 opts=_opts,
             )

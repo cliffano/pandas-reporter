@@ -13,7 +13,7 @@ class TestTextFormatter(unittest.TestCase):
             "City": ["Philadelphia", "Chicago", "San Antonio"],
         }
         data_frame = pd.DataFrame(data)
-        result = format_report(data_frame, {})
+        result = format_report(data_frame, {"out_format": "text"})
         expected = (
             "┌──────────┬──────────┬──────────────┐\n"
             "│ Name     │      DOB │ City         │\n"
