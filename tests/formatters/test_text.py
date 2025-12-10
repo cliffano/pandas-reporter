@@ -10,9 +10,7 @@ class TestTextFormatter(unittest.TestCase):
         data = {}
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
-        expected = (
-            ""
-        )
+        expected = ""
         self.assertEqual(result, expected)
 
     def test_format_report_with_simple_data(self):

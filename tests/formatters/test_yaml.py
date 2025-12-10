@@ -10,9 +10,7 @@ class TestYamlFormatter(unittest.TestCase):
         data = {}
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
-        expected = (
-            "[]\n"
-        )
+        expected = "[]\n"
         self.assertEqual(result, expected)
 
     def test_format_report_with_simple_data(self):
@@ -25,15 +23,15 @@ class TestYamlFormatter(unittest.TestCase):
         result = format_report(data_frame, {})
         print(result)
         expected = (
-            '- City: Philadelphia\n'
-            '  DOB: \'19630220\'\n'
-            '  Name: Barkley\n'
-            '- City: Chicago\n'
-            '  DOB: \'19650925\'\n'
-            '  Name: Pippen\n'
-            '- City: San Antonio\n'
-            '  DOB: \'19650806\'\n'
-            '  Name: Robinson\n'
+            "- City: Philadelphia\n"
+            "  DOB: '19630220'\n"
+            "  Name: Barkley\n"
+            "- City: Chicago\n"
+            "  DOB: '19650925'\n"
+            "  Name: Pippen\n"
+            "- City: San Antonio\n"
+            "  DOB: '19650806'\n"
+            "  Name: Robinson\n"
         )
         self.assertEqual(result, expected)
 

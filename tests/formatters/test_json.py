@@ -10,9 +10,7 @@ class TestJsonFormatter(unittest.TestCase):
         data = {}
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
-        expected = (
-            "[\n\n]"
-        )
+        expected = "[\n\n]"
         self.assertEqual(result, expected)
 
     def test_format_report_with_simple_data(self):
@@ -24,23 +22,23 @@ class TestJsonFormatter(unittest.TestCase):
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
         expected = (
-            '[\n'
-            '  {\n'
+            "[\n"
+            "  {\n"
             '    "Name":"Barkley",\n'
             '    "DOB":"19630220",\n'
             '    "City":"Philadelphia"\n'
-            '  },\n'
-            '  {\n'
+            "  },\n"
+            "  {\n"
             '    "Name":"Pippen",\n'
             '    "DOB":"19650925",\n'
             '    "City":"Chicago"\n'
-            '  },\n'
-            '  {\n'
+            "  },\n"
+            "  {\n"
             '    "Name":"Robinson",\n'
             '    "DOB":"19650806",\n'
             '    "City":"San Antonio"\n'
-            '  }\n'
-            ']'
+            "  }\n"
+            "]"
         )
         self.assertEqual(result, expected)
 
@@ -55,25 +53,25 @@ class TestJsonFormatter(unittest.TestCase):
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
         expected = (
-            '[\n'
-            '  {\n'
+            "[\n"
+            "  {\n"
             '    "Players":{\n'
             '      "DOB":"19630220",\n'
             '      "City":"Philadelphia"\n'
-            '    }\n'
-            '  },\n'
-            '  {\n'
+            "    }\n"
+            "  },\n"
+            "  {\n"
             '    "Players":{\n'
             '      "DOB":"19650925",\n'
             '      "City":"Chicago"\n'
-            '    }\n'
-            '  },\n'
-            '  {\n'
+            "    }\n"
+            "  },\n"
+            "  {\n"
             '    "Players":{\n'
             '      "DOB":"19650806",\n'
             '      "City":"San Antonio"\n'
-            '    }\n'
-            '  }\n'
-            ']'
+            "    }\n"
+            "  }\n"
+            "]"
         )
         self.assertEqual(result, expected)
