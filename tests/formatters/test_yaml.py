@@ -21,7 +21,6 @@ class TestYamlFormatter(unittest.TestCase):
         }
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
-        print(result)
         expected = (
             "- City: Philadelphia\n"
             "  DOB: '19630220'\n"
@@ -35,37 +34,25 @@ class TestYamlFormatter(unittest.TestCase):
         )
         self.assertEqual(result, expected)
 
-    # def test_format_report_with_nested_data(self):
-    #     data = {
-    #         "Players": {
-    #             "Barkley": {"DOB": "19630220", "City": "Philadelphia"},
-    #             "Pippen": {"DOB": "19650925", "City": "Chicago"},
-    #             "Robinson": {"DOB": "19650806", "City": "San Antonio"},
-    #         }
-    #     }
-    #     data_frame = pd.DataFrame(data)
-    #     result = format_report(data_frame, {})
-    #     print(result)
-    #     expected = (
-    #         '[\n'
-    #         '  {\n'
-    #         '    "Players":{\n'
-    #         '      "DOB":"19630220",\n'
-    #         '      "City":"Philadelphia"\n'
-    #         '    }\n'
-    #         '  },\n'
-    #         '  {\n'
-    #         '    "Players":{\n'
-    #         '      "DOB":"19650925",\n'
-    #         '      "City":"Chicago"\n'
-    #         '    }\n'
-    #         '  },\n'
-    #         '  {\n'
-    #         '    "Players":{\n'
-    #         '      "DOB":"19650806",\n'
-    #         '      "City":"San Antonio"\n'
-    #         '    }\n'
-    #         '  }\n'
-    #         ']'
-    #     )
-    #     self.assertEqual(result, expected)
+    def test_format_report_with_nested_data(self):
+        data = {
+            "Players": {
+                "Barkley": {"DOB": "19630220", "City": "Philadelphia"},
+                "Pippen": {"DOB": "19650925", "City": "Chicago"},
+                "Robinson": {"DOB": "19650806", "City": "San Antonio"},
+            }
+        }
+        data_frame = pd.DataFrame(data)
+        result = format_report(data_frame, {})
+        expected = (
+            "- Players:\n"
+            "    City: Philadelphia\n"
+            "    DOB: '19630220'\n"
+            "- Players:\n"
+            "    City: Chicago\n"
+            "    DOB: '19650925'\n"
+            "- Players:\n"
+            "    City: San Antonio\n"
+            "    DOB: '19650806'\n"
+        )
+        self.assertEqual(result, expected)
