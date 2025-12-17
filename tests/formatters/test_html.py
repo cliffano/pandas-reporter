@@ -41,7 +41,6 @@ class TestHtmlFormatter(unittest.TestCase):
         }
         data_frame = pd.DataFrame(data)
         result = format_report(data_frame, {})
-        self.maxDiff = None
         expected_pattern = (
             r"<!DOCTYPE html>\n"
             r"<html>\n"
