@@ -50,7 +50,7 @@ Colophon
 Build reports:
 
 * [Lint report](https://cliffano.github.io/pandasreporter/lint/pylint/index.html)
-* [Code complexity report](https://cliffano.github.io/pandasreporter/complexity/wily/index.html)
+* [Code complexity report](https://cliffano.github.io/pandasreporter/complexity/radon/index.html)
 * [Unit tests report](https://cliffano.github.io/pandasreporter/test/pytest/index.html)
 * [Test coverage report](https://cliffano.github.io/pandasreporter/coverage/coverage/index.html)
 * [Integration tests report](https://cliffano.github.io/pandasreporter/test-integration/pytest/index.html)
