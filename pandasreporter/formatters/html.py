@@ -21,10 +21,10 @@ def format_report(data_frame, opts) -> str:
     table = styled_data_frame.to_html(doctype_html=False, index=False)
     table = re.sub(r"col_heading", "text-center table-active col_heading", table)
 
-    doc = document(title="Certilizer Report")
+    doc = document(title=opts.get("title", "Pandas Report"))
     with doc.head:
         meta(charset="utf-8")
-        meta(name="generator", content="Certilizer")
+        meta(name="generator", content=opts.get("generator", "Pandas Reporter"))
         link(
             rel="stylesheet",
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css",
