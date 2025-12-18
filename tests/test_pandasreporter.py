@@ -20,7 +20,12 @@ class TestPandasReporter(unittest.TestCase):
 
         with patch.object(PandasReporter, "report", return_value=None) as mock_report:
             pandas_reporter = PandasReporter()
-            _opts = {"colour_rows_styler": lambda x: [""] * len(x), "max_col_size": 80}
+            _opts = {
+                "title": "Some Report",
+                "generator": "Some Generator",
+                "colour_rows_styler": lambda x: [""] * len(x),
+                "max_col_size": 80,
+            }
             pandas_reporter.report(
                 data_frame,
                 "html",
@@ -29,5 +34,80 @@ class TestPandasReporter(unittest.TestCase):
             mock_report.assert_called_once_with(
                 data_frame,
                 "html",
+                opts=_opts,
+            )
+
+    @patch("pandasreporter.formatters.json.format_report")
+    def test_pandasreporter_format_json(self, mock_format):
+        mock_format.return_value = "{}"
+
+        data = {
+            "Name": ["Barkley", "Pippen", "Robinson"],
+            "DOB": ["19630220", "19650925", "19650806"],
+            "City": ["Philadelphia", "Chicago", "San Antonio"],
+        }
+        data_frame = pd.DataFrame(data)
+
+        with patch.object(PandasReporter, "report", return_value=None) as mock_report:
+            pandas_reporter = PandasReporter()
+            _opts = {}
+            pandas_reporter.report(
+                data_frame,
+                "json",
+                opts=_opts,
+            )
+            mock_report.assert_called_once_with(
+                data_frame,
+                "json",
+                opts=_opts,
+            )
+
+    @patch("pandasreporter.formatters.yaml_.format_report")
+    def test_pandasreporter_format_yaml(self, mock_format):
+        mock_format.return_value = ""
+
+        data = {
+            "Name": ["Barkley", "Pippen", "Robinson"],
+            "DOB": ["19630220", "19650925", "19650806"],
+            "City": ["Philadelphia", "Chicago", "San Antonio"],
+        }
+        data_frame = pd.DataFrame(data)
+
+        with patch.object(PandasReporter, "report", return_value=None) as mock_report:
+            pandas_reporter = PandasReporter()
+            _opts = {}
+            pandas_reporter.report(
+                data_frame,
+                "yaml",
+                opts=_opts,
+            )
+            mock_report.assert_called_once_with(
+                data_frame,
+                "yaml",
+                opts=_opts,
+            )
+
+    @patch("pandasreporter.formatters.text.format_report")
+    def test_pandasreporter_format_text(self, mock_format):
+        mock_format.return_value = ""
+
+        data = {
+            "Name": ["Barkley", "Pippen", "Robinson"],
+            "DOB": ["19630220", "19650925", "19650806"],
+            "City": ["Philadelphia", "Chicago", "San Antonio"],
+        }
+        data_frame = pd.DataFrame(data)
+
+        with patch.object(PandasReporter, "report", return_value=None) as mock_report:
+            pandas_reporter = PandasReporter()
+            _opts = {}
+            pandas_reporter.report(
+                data_frame,
+                "text",
+                opts=_opts,
+            )
+            mock_report.assert_called_once_with(
+                data_frame,
+                "text",
                 opts=_opts,
             )
