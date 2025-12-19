@@ -35,7 +35,7 @@ Create pandasreporter object and run it:
     _opts = {
         "title": "Pandas Report",
         "generator": "Pandas Reporter",
-        "colour_rows_styler": <row_styler_function>,
+        "rows_styler": <rows_styler_function>,
         "max_col_size": 80,
     }
 
@@ -56,15 +56,15 @@ Some example report files are available on [examples](examples) folder.
 | `max_col_size` | Number | Maximum value length | `80` | All |
 | `title` | String | HTML report title value | `Pandas Report` | `html` |
 | `generator` | String | HTML report generator meta | `Pandas Reporter` | `html` |
-| `colour_rows_styler` | Function | Data row styler | | `html` |
+| `rows_styler` | Function | Data row styler | | `html` |
 
-### HTML Row Styler
+### HTML Rows Styler
 
-Row styler can be used to apply style to the table row in HTML report.
+Rows styler can be used to apply style to each of the table rows in HTML report.
 
-Here's an example row styler function which checks a row's "Expiry Date" column value against current date and a threshold date, and add background-color style accordingly:
+Here's an example rows styler function which checks a row's "Expiry Date" column value against current date and a threshold date, and add background-color style accordingly:
 
-    def row_styler(row):
+    def rows_styler(row):
         today = pd.Timestamp.today()
         threshold_date = today + pd.DateOffset(days=self.expiry_threshold_in_days)
         if row["Expiry Date"] <= today:

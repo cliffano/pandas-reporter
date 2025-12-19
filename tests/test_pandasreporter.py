@@ -22,7 +22,7 @@ class TestPandasReporter(unittest.TestCase):
         _opts = {
             "title": "Some Report",
             "generator": "Some Generator",
-            "colour_rows_styler": lambda x: [""] * len(x),
+            "rows_styler": lambda x: [""] * len(x),
             "max_col_size": 80,
         }
 

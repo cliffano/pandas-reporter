@@ -40,7 +40,7 @@ reporter.report(
 )
 
 
-def _colour_rows_styler(row):
+def _rows_styler(row):
     if row["City"] == "Chicago":
         style = ["background-color: LightPink"] * len(row)
     elif row["City"] == "San Antonio":
@@ -50,14 +50,12 @@ def _colour_rows_styler(row):
     return style
 
 
-reporter.report(
-    data_frame=df, out_format="html", opts={"colour_rows_styler": _colour_rows_styler}
-)
+reporter.report(data_frame=df, out_format="html", opts={"rows_styler": _rows_styler})
 reporter.report(
     data_frame=df,
     out_format="html",
     opts={
-        "colour_rows_styler": _colour_rows_styler,
+        "rows_styler": _rows_styler,
         "out_file": "../stage/test-examples/report-styled.html",
     },
 )
