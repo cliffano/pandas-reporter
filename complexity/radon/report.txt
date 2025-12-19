@@ -2,6 +2,7 @@ pandasreporter/__init__.py - A
 pandasreporter/formatters/yaml_.py - A
 pandasreporter/formatters/json.py - A
 pandasreporter/formatters/text.py - A
+pandasreporter/formatters/__init__.py - A
 pandasreporter/formatters/html.py - A
 pandasreporter/__init__.py
     M 31:4 PandasReporter._format_data - A (4)

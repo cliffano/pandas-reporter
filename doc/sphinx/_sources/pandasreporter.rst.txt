@@ -1,6 +1,14 @@
 pandasreporter package
 ======================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pandasreporter.formatters
+
 Module contents
 ---------------
 
