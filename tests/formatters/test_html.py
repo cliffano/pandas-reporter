@@ -145,6 +145,7 @@ class TestHtmlFormatter(unittest.TestCase):
         opts = {
             "title": "Some Title",
             "generator": "Some Generator",
+            "colour_rows_styler": lambda x: [""] * len(x)
         }
         result = format_report(data_frame, opts)
         expected_pattern = (
