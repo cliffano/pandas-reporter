@@ -9,7 +9,7 @@
 Pandas Reporter
 ---------------
 
-Pandas Reporter is a Report builder for Pandas DataFrame .
+Pandas Reporter is a report builder for Pandas DataFrame. It generates HTML, JSON, text, or YAML report containing the data in the data frame.
 
 Installation
 ------------
@@ -19,28 +19,61 @@ Installation
 Usage
 -----
 
-Create a configuration file, e.g. `pandasreporter.yaml`:
-
-    ---
-    text: Hello World
-
 Create pandasreporter object and run it:
 
-    from pandasreporter import Display
+    from pandasreporter import PandasReporter
 
-    display = Display(conf_files=['pandasreporter.yaml'])
-    text = display.format(reverse=False, transformation='lower')
-    print(text)
+    # Prepare your data frame
+    data = {
+        "Name": ["Barkley", "Pippen", "Robinson"],
+        "DOB": ["19630220", "19650925", "19650806"],
+        "City": ["Philadelphia", "Chicago", "San Antonio"],
+    }
+    data_frame = pd.DataFrame(data)
+
+    pandas_reporter = PandasReporter()
+    _opts = {
+        "title": "Pandas Report",
+        "generator": "Pandas Reporter",
+        "colour_rows_styler": <row_styler_function>,
+        "max_col_size": 80,
+    }
+
+    pandas_reporter.report(
+        data_frame,
+        "html", # other formatters: json, text, or yaml
+        _opts,
+    )
 
 Configuration
 -------------
 
-These are the configuration properties that you can use with `pandasreporter` CLI.
-Some example configuration files are available on [examples](examples) folder.
+These are the optional properties that you can use with `pandasreporter.report`.
+Some example report files are available on [examples](examples) folder.
 
-| Property | Type | Description | Example |
-|----------|------|-------------|---------|
-| `text` | String | The message text | Hello World |
+| Opt | Type | Description | Example | Formatter |
+|-----|------|-------------|---------|----------|
+| `max_col_size` | Number | Maximum value length | `80` | All |
+| `title` | String | HTML report title value | `Pandas Report` | `html` |
+| `generator` | String | HTML report generator meta | `Pandas Reporter` | `html` |
+| `colour_rows_styler` | Function | Data row styler | | `html` |
+
+### HTML Row Styler
+
+Row styler can be used to apply style to the table row in HTML report.
+
+Here's an example row styler function which checks a row's "Expiry Date" column value against current date and a threshold date, and add background-color style accordingly:
+
+    def row_styler(row):
+        today = pd.Timestamp.today()
+        threshold_date = today + pd.DateOffset(days=self.expiry_threshold_in_days)
+        if row["Expiry Date"] <= today:
+            style = ["background-color: LightPink"] * len(row)
+        elif row["Expiry Date"] <= threshold_date:
+            style = ["background-color: LightYellow"] * len(row)
+        else:
+            style = ["background-color: LightGreen"] * len(row)
+        return style
 
 Colophon
 --------
@@ -49,9 +82,9 @@ Colophon
 
 Build reports:
 
-* [Lint report](https://cliffano.github.io/pandasreporter/lint/pylint/index.html)
-* [Code complexity report](https://cliffano.github.io/pandasreporter/complexity/radon/index.html)
-* [Unit tests report](https://cliffano.github.io/pandasreporter/test/pytest/index.html)
-* [Test coverage report](https://cliffano.github.io/pandasreporter/coverage/coverage/index.html)
-* [Integration tests report](https://cliffano.github.io/pandasreporter/test-integration/pytest/index.html)
-* [API Documentation](https://cliffano.github.io/pandasreporter/doc/sphinx/index.html)
+* [Lint report](https://cliffano.github.io/pandas-reporter/lint/pylint/index.html)
+* [Code complexity report](https://cliffano.github.io/pandas-reporter/complexity/radon/index.html)
+* [Unit tests report](https://cliffano.github.io/pandas-reporter/test/pytest/index.html)
+* [Test coverage report](https://cliffano.github.io/pandas-reporter/coverage/coverage/index.html)
+* [Integration tests report](https://cliffano.github.io/pandas-reporter/test-integration/pytest/index.html)
+* [API Documentation](https://cliffano.github.io/pandas-reporter/doc/sphinx/index.html)
