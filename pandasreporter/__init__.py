@@ -20,7 +20,7 @@ class PandasReporter:
         """Write the data to the output file or stdout."""
 
         if opts.get("max_col_size"):
-            data_frame = data_frame.map(
+            data_frame = data_frame.applymap(
                 lambda x: x[0 : opts["max_col_size"]] if isinstance(x, str) else x
             )
 
