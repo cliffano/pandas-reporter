@@ -34,6 +34,7 @@ class TestPandasReporter(unittest.TestCase):
         )
 
         mock_formatter.assert_called_once()
+        # pylint: disable=unused-variable
         args, kwargs = mock_formatter.call_args
         pdt.assert_frame_equal(args[0], data_frame)
         self.assertEqual(args[1], _opts)
@@ -68,7 +69,9 @@ class TestPandasReporter(unittest.TestCase):
     @patch("pandasreporter.format_json")
     @patch("builtins.print")
     @patch("builtins.open", new_callable=mock_open)
-    def test_pandasreporter_format_json_with_outfile(self, mock_open_fn, mock_print, mock_formatter):
+    def test_pandasreporter_format_json_with_outfile(
+        self, mock_open_fn, mock_print, mock_formatter
+    ):
         data = {
             "Name": ["Barkley", "Pippen", "Robinson"],
             "DOB": ["19630220", "19650925", "19650806"],
