@@ -1,8 +1,9 @@
 <img align="right" src="https://raw.github.com/cliffano/pandas-reporter/main/avatar.jpg" alt="Avatar"/>
 
 [![Build Status](https://github.com/cliffano/pandas-reporter/workflows/CI/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACI)
+[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/pandasreporter)](https://libraries.io/pypi/pandasreporter)
+[![Code Scanning Status](https://github.com/cliffano/pandas-reporter/workflows/CodeQL/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACodeQL)
 [![Security Status](https://snyk.io/test/github/cliffano/pandas-reporter/badge.svg)](https://snyk.io/test/github/cliffano/pandas-reporter)
-[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/pandasreporter)](https://libraries.io/github/cliffano/pandas-reporter)
 [![Published Version](https://img.shields.io/pypi/v/pandasreporter.svg)](https://pypi.python.org/pypi/pandasreporter)
 <br/>
 
