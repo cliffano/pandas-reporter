@@ -6,5 +6,5 @@ cd ../
 . ./.venv/bin/activate
 cd examples/
 
-mkdir reports
+mkdir -p reports
 python3 _pandasreporter.py
