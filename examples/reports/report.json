@@ -1,0 +1,17 @@
+[
+  {
+    "Name":"Barkley",
+    "DOB":"19630220",
+    "City":"Philadelphia"
+  },
+  {
+    "Name":"Pippen",
+    "DOB":"19650925",
+    "City":"Chicago"
+  },
+  {
+    "Name":"Robinson",
+    "DOB":"19650806",
+    "City":"San Antonio"
+  }
+]

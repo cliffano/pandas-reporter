@@ -11,32 +11,32 @@ df = pd.DataFrame(data)
 
 reporter = PandasReporter()
 
-reporter.report(data_frame=df, out_format="text", opts={})
+reporter.report(df, "text", {})
 reporter.report(
-    data_frame=df,
-    out_format="text",
-    opts={"out_file": "../stage/test-examples/report.txt"},
+    df,
+    "text",
+    {"out_file": "reports/report.txt"},
 )
 
-reporter.report(data_frame=df, out_format="json", opts={})
+reporter.report(df, "json", {})
 reporter.report(
-    data_frame=df,
-    out_format="json",
-    opts={"out_file": "../stage/test-examples/report.json"},
+    df,
+    "json",
+    {"out_file": "reports/report.json"},
 )
 
-reporter.report(data_frame=df, out_format="yaml", opts={})
+reporter.report(df, "yaml", {})
 reporter.report(
-    data_frame=df,
-    out_format="yaml",
-    opts={"out_file": "../stage/test-examples/report.yaml"},
+    df,
+    "yaml",
+    {"out_file": "reports/report.yaml"},
 )
 
-reporter.report(data_frame=df, out_format="html", opts={})
+reporter.report(df, "html", {})
 reporter.report(
-    data_frame=df,
-    out_format="html",
-    opts={"out_file": "../stage/test-examples/report.html"},
+    df,
+    "html",
+    {"out_file": "reports/report.html"},
 )
 
 
@@ -50,22 +50,22 @@ def _rows_styler(row):
     return style
 
 
-reporter.report(data_frame=df, out_format="html", opts={"rows_styler": _rows_styler})
+reporter.report(df, "html", {"rows_styler": _rows_styler})
 reporter.report(
-    data_frame=df,
-    out_format="html",
-    opts={
+    df,
+    "html",
+    {
         "rows_styler": _rows_styler,
-        "out_file": "../stage/test-examples/report-styled.html",
+        "out_file": "reports/report-styled.html",
     },
 )
 
-reporter.report(data_frame=df, out_format="html", opts={"max_col_size": 3})
+reporter.report(df, "html", {"max_col_size": 3})
 reporter.report(
-    data_frame=df,
-    out_format="html",
-    opts={
+    df,
+    "html",
+    {
         "max_col_size": 3,
-        "out_file": "../stage/test-examples/report-maxcolsize.html",
+        "out_file": "reports/report-maxcolsize.html",
     },
 )
