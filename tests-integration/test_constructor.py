@@ -6,5 +6,5 @@ from pandasreporter import PandasReporter
 class TestConstructor(unittest.TestCase):
 
     def test_constructor(self):
-        reporter = PandasReporter()
-        self.assertIsInstance(reporter, PandasReporter)
+        pandas_reporter = PandasReporter()
+        self.assertIsInstance(pandas_reporter, PandasReporter)
