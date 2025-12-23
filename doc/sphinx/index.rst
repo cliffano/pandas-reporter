@@ -1,5 +1,5 @@
 .. pandasreporter documentation master file, created by
-   sphinx-quickstart on Sun Dec 21 08:51:25 2025.
+   sphinx-quickstart on Tue Dec 23 07:19:40 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 

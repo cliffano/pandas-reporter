@@ -134,7 +134,7 @@
         "fatal": 0,
         "info": 0,
         "refactor": 0,
-        "statement": 29,
+        "statement": 31,
         "warning": 0
       },
       "tests.formatters.__init__": {
@@ -146,6 +146,33 @@
         "statement": 0,
         "warning": 0
       },
+      "test_html_report": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 18,
+        "warning": 0
+      },
+      "test_json_report": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 16,
+        "warning": 0
+      },
+      "test_yaml_report": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 16,
+        "warning": 0
+      },
       "test_constructor": {
         "convention": 0,
         "error": 0,
@@ -154,9 +181,18 @@
         "refactor": 0,
         "statement": 6,
         "warning": 0
+      },
+      "test_text_report": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 16,
+        "warning": 0
       }
     },
-    "statement": 208,
+    "statement": 276,
     "error": 0,
     "warning": 0,
     "refactor": 0,
