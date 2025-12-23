@@ -1,7 +1,11 @@
 # pylint: disable=missing-module-docstring,missing-class-docstring,missing-function-docstring,duplicate-code,too-many-locals,line-too-long
 import unittest
+import asyncio
 import pandas as pd
 from pandasreporter.formatters.html import format_report
+
+# Silence dominaate 'There is no current event loop' warning
+asyncio.set_event_loop(asyncio.new_event_loop())
 
 
 class TestHtmlFormatter(unittest.TestCase):
