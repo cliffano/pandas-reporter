@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Added
+- Add formatter integration tests
+
 ### Fixed
 - Fix use of deprecated data frame applymap
 
