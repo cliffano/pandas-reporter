@@ -76,6 +76,57 @@ Here's an example rows styler function which checks a row's "Expiry Date" column
             style = ["background-color: LightGreen"] * len(row)
         return style
 
+Report Formats
+--------------
+
+### HTML
+
+![Screenshot of report in HTML format](/screenshots/report-html.png "Report in HTML format")
+
+### Text
+
+    ┌──────────┬──────────┬──────────────┐
+    │ Name     │      DOB │ City         │
+    ├──────────┼──────────┼──────────────┤
+    │ Barkley  │ 19630220 │ Philadelphia │
+    ├──────────┼──────────┼──────────────┤
+    │ Pippen   │ 19650925 │ Chicago      │
+    ├──────────┼──────────┼──────────────┤
+    │ Robinson │ 19650806 │ San Antonio  │
+    └──────────┴──────────┴──────────────┘
+
+### JSON
+
+    [
+    {
+        "Name":"Barkley",
+        "DOB":"19630220",
+        "City":"Philadelphia"
+    },
+    {
+        "Name":"Pippen",
+        "DOB":"19650925",
+        "City":"Chicago"
+    },
+    {
+        "Name":"Robinson",
+        "DOB":"19650806",
+        "City":"San Antonio"
+    }
+    ]
+
+### YAML
+
+    - City: Philadelphia
+      DOB: '19630220'
+      Name: Barkley
+    - City: Chicago
+      DOB: '19650925'
+      Name: Pippen
+    - City: San Antonio
+      DOB: '19650806'
+      Name: Robinson
+
 Colophon
 --------
 
