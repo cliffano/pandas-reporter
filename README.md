@@ -1,24 +1,20 @@
-<img align="right" src="https://raw.github.com/cliffano/pandas-reporter/main/avatar.jpg" alt="Avatar"/>
+![Avatar](avatar.jpg)
 
 [![Build Status](https://github.com/cliffano/pandas-reporter/workflows/CI/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/cliffano/pandas-reporter/workflows/CodeQL/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACodeQL)
 [![Dependencies Status](https://img.shields.io/librariesio/release/pypi/pandasreporter)](https://libraries.io/pypi/pandasreporter)
 [![Security Status](https://snyk.io/test/github/cliffano/pandas-reporter/badge.svg)](https://snyk.io/test/github/cliffano/pandas-reporter)
 [![Published Version](https://img.shields.io/pypi/v/pandasreporter.svg)](https://pypi.python.org/pypi/pandasreporter)
-<br/>
 
-Pandas Reporter
----------------
+# Pandas Reporter
 
 Pandas Reporter is a report builder for Pandas DataFrame. It generates HTML, JSON, text, or YAML report containing the data in the data frame.
 
-Installation
-------------
+## Installation
 
     pip3 install pandasreporter
 
-Usage
------
+## Usage
 
 Create pandasreporter object and run it:
 
@@ -46,8 +42,7 @@ Create pandasreporter object and run it:
         _opts,
     )
 
-Configuration
--------------
+## Configuration
 
 These are the optional properties that you can use with `pandasreporter.report`.
 Some example report files are available on [examples](examples) folder.
@@ -76,8 +71,7 @@ Here's an example rows styler function which checks a row's "Expiry Date" column
             style = ["background-color: LightGreen"] * len(row)
         return style
 
-Report Formats
---------------
+## Report Formats
 
 ### HTML
 
@@ -127,8 +121,7 @@ Report Formats
       DOB: '19650806'
       Name: Robinson
 
-Colophon
---------
+## Colophon
 
 [Developer's Guide](https://cliffano.github.io/developers_guide.html#python)
 
