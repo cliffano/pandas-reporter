@@ -1,3 +1,13 @@
 ---
 author: Cliffano Subagio
 package_name: pandasreporter
+generator:
+  component: python-lib
+  inputs:
+    project_id: pandasreporter
+    project_name: Pandas Reporter
+    project_desc: Report builder for Pandas DataFrame
+    author_name: Cliffano Subagio
+    author_email: cliffano@gmail.com
+    github_id: cliffano
+    github_repo: pandas-reporter
