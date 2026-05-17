@@ -38,22 +38,13 @@
         "statement": 17,
         "warning": 0
       },
-      "pandasreporter.formatters.text": {
+      "pandasreporter.formatters.json": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
         "info": 0,
         "refactor": 0,
-        "statement": 3,
-        "warning": 0
-      },
-      "pandasreporter.formatters.yaml_": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 3,
+        "statement": 2,
         "warning": 0
       },
       "pandasreporter.formatters.__init__": {
@@ -65,13 +56,22 @@
         "statement": 0,
         "warning": 0
       },
-      "pandasreporter.formatters.json": {
+      "pandasreporter.formatters.yaml_": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
         "info": 0,
         "refactor": 0,
-        "statement": 2,
+        "statement": 3,
+        "warning": 0
+      },
+      "pandasreporter.formatters.text": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 3,
         "warning": 0
       },
       "pandasreporter.__init__": {
@@ -81,6 +81,24 @@
         "info": 0,
         "refactor": 0,
         "statement": 26,
+        "warning": 0
+      },
+      "tests.formatters.test_html": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 31,
+        "warning": 0
+      },
+      "tests.formatters.test_text": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 22,
         "warning": 0
       },
       "tests.formatters.test_json": {
@@ -101,25 +119,16 @@
         "statement": 22,
         "warning": 0
       },
-      "tests.formatters.test_text": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 22,
-        "warning": 0
-      },
-      "tests.formatters.test_html": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 31,
-        "warning": 0
-      },
       "tests.formatters.__init__": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 0,
+        "warning": 0
+      },
+      "tests.__init__": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
@@ -137,25 +146,7 @@
         "statement": 56,
         "warning": 0
       },
-      "tests.__init__": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 0,
-        "warning": 0
-      },
       "test_yaml_report": {
-        "convention": 0,
-        "error": 0,
-        "fatal": 0,
-        "info": 0,
-        "refactor": 0,
-        "statement": 16,
-        "warning": 0
-      },
-      "test_text_report": {
         "convention": 0,
         "error": 0,
         "fatal": 0,
@@ -171,6 +162,15 @@
         "info": 0,
         "refactor": 0,
         "statement": 18,
+        "warning": 0
+      },
+      "test_text_report": {
+        "convention": 0,
+        "error": 0,
+        "fatal": 0,
+        "info": 0,
+        "refactor": 0,
+        "statement": 16,
         "warning": 0
       },
       "test_constructor": {
