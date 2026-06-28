@@ -22,29 +22,31 @@ Pandas Reporter is a report builder for Pandas DataFrame. It generates HTML, JSO
 
 Create pandasreporter object and run it:
 
-    from pandasreporter import PandasReporter
+```python
+from pandasreporter import PandasReporter
 
-    # Prepare your data frame
-    data = {
-        "Name": ["Barkley", "Pippen", "Robinson"],
-        "DOB": ["19630220", "19650925", "19650806"],
-        "City": ["Philadelphia", "Chicago", "San Antonio"],
-    }
-    data_frame = pd.DataFrame(data)
+# Prepare your data frame
+data = {
+    "Name": ["Barkley", "Pippen", "Robinson"],
+    "DOB": ["19630220", "19650925", "19650806"],
+    "City": ["Philadelphia", "Chicago", "San Antonio"],
+}
+data_frame = pd.DataFrame(data)
 
-    pandas_reporter = PandasReporter()
-    _opts = {
-        "title": "Pandas Report",
-        "generator": "Pandas Reporter",
-        "rows_styler": <rows_styler_function>,
-        "max_col_size": 80,
-    }
+pandas_reporter = PandasReporter()
+_opts = {
+    "title": "Pandas Report",
+    "generator": "Pandas Reporter",
+    "rows_styler": <rows_styler_function>,
+    "max_col_size": 80,
+}
 
-    pandas_reporter.report(
-        data_frame,
-        "html", # other formatters: json, text, or yaml
-        _opts,
-    )
+pandas_reporter.report(
+    data_frame,
+    "html", # other formatters: json, text, or yaml
+    _opts,
+)
+```
 
 ## Configuration
 
@@ -64,16 +66,18 @@ Rows styler can be used to apply style to each of the table rows in HTML report.
 
 Here's an example rows styler function which checks a row's "Expiry Date" column value against current date and a threshold date, and add background-color style accordingly:
 
-    def rows_styler(row):
-        today = pd.Timestamp.today()
-        threshold_date = today + pd.DateOffset(days=self.expiry_threshold_in_days)
-        if row["Expiry Date"] <= today:
-            style = ["background-color: LightPink"] * len(row)
-        elif row["Expiry Date"] <= threshold_date:
-            style = ["background-color: LightYellow"] * len(row)
-        else:
-            style = ["background-color: LightGreen"] * len(row)
-        return style
+```python
+def rows_styler(row):
+    today = pd.Timestamp.today()
+    threshold_date = today + pd.DateOffset(days=self.expiry_threshold_in_days)
+    if row["Expiry Date"] <= today:
+        style = ["background-color: LightPink"] * len(row)
+    elif row["Expiry Date"] <= threshold_date:
+        style = ["background-color: LightYellow"] * len(row)
+    else:
+        style = ["background-color: LightGreen"] * len(row)
+    return style
+```
 
 ## Report Formats
 
@@ -95,35 +99,39 @@ Here's an example rows styler function which checks a row's "Expiry Date" column
 
 ### JSON
 
-    [
-    {
-        "Name":"Barkley",
-        "DOB":"19630220",
-        "City":"Philadelphia"
-    },
-    {
-        "Name":"Pippen",
-        "DOB":"19650925",
-        "City":"Chicago"
-    },
-    {
-        "Name":"Robinson",
-        "DOB":"19650806",
-        "City":"San Antonio"
-    }
-    ]
+```json
+[
+{
+    "Name":"Barkley",
+    "DOB":"19630220",
+    "City":"Philadelphia"
+},
+{
+    "Name":"Pippen",
+    "DOB":"19650925",
+    "City":"Chicago"
+},
+{
+    "Name":"Robinson",
+    "DOB":"19650806",
+    "City":"San Antonio"
+}
+]
+```
 
 ### YAML
 
-    - City: Philadelphia
-      DOB: '19630220'
-      Name: Barkley
-    - City: Chicago
-      DOB: '19650925'
-      Name: Pippen
-    - City: San Antonio
-      DOB: '19650806'
-      Name: Robinson
+```
+- City: Philadelphia
+    DOB: '19630220'
+    Name: Barkley
+- City: Chicago
+    DOB: '19650925'
+    Name: Pippen
+- City: San Antonio
+    DOB: '19650806'
+    Name: Robinson
+```
 
 ## Colophon
 
