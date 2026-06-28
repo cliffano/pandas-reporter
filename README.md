@@ -1,10 +1,14 @@
+<!-- BEGIN:AVATAR -->
 ![Avatar](avatar.jpg)
+<!-- END:AVATAR -->
 
+<!-- BEGIN:BADGES -->
 [![Build Status](https://github.com/cliffano/pandas-reporter/workflows/CI/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACI)
 [![Code Scanning Status](https://github.com/cliffano/pandas-reporter/workflows/CodeQL/badge.svg)](https://github.com/cliffano/pandas-reporter/actions?query=workflow%3ACodeQL)
-[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/pandasreporter)](https://libraries.io/pypi/pandasreporter)
+[![Dependencies Status](https://img.shields.io/librariesio/release/pypi/pandasreporter)](https://libraries.io/github/cliffano/pandas-reporter)
 [![Security Status](https://snyk.io/test/github/cliffano/pandas-reporter/badge.svg)](https://snyk.io/test/github/cliffano/pandas-reporter)
 [![Published Version](https://img.shields.io/pypi/v/pandasreporter.svg)](https://pypi.python.org/pypi/pandasreporter)
+<!-- END:BADGES -->
 
 # Pandas Reporter
 
@@ -123,8 +127,11 @@ Here's an example rows styler function which checks a row's "Expiry Date" column
 
 ## Colophon
 
-[Developer's Guide](https://cliffano.github.io/developers_guide.html#python)
+<!-- BEGIN:DEVELOPERS_GUIDE -->
+[Developer's Guide](https://cliffano.github.io/developers-guide-python.html)
+<!-- END:DEVELOPERS_GUIDE -->
 
+<!-- BEGIN:BUILD_REPORTS -->
 Build reports:
 
 * [Lint report](https://cliffano.github.io/pandas-reporter/lint/pylint/index.html)
@@ -133,3 +140,5 @@ Build reports:
 * [Test coverage report](https://cliffano.github.io/pandas-reporter/coverage/coverage/index.html)
 * [Integration tests report](https://cliffano.github.io/pandas-reporter/test-integration/pytest/index.html)
 * [API Documentation](https://cliffano.github.io/pandas-reporter/doc/sphinx/index.html)
+
+<!-- END:BUILD_REPORTS -->
