@@ -16,7 +16,9 @@ Pandas Reporter is a report builder for Pandas DataFrame. It generates HTML, JSO
 
 ## Installation
 
-    pip3 install pandasreporter
+```shell
+pip3 install pandasreporter
+```
 
 ## Usage
 
@@ -87,15 +89,17 @@ def rows_styler(row):
 
 ### Text
 
-    ┌──────────┬──────────┬──────────────┐
-    │ Name     │      DOB │ City         │
-    ├──────────┼──────────┼──────────────┤
-    │ Barkley  │ 19630220 │ Philadelphia │
-    ├──────────┼──────────┼──────────────┤
-    │ Pippen   │ 19650925 │ Chicago      │
-    ├──────────┼──────────┼──────────────┤
-    │ Robinson │ 19650806 │ San Antonio  │
-    └──────────┴──────────┴──────────────┘
+```text
+┌──────────┬──────────┬──────────────┐
+│ Name     │      DOB │ City         │
+├──────────┼──────────┼──────────────┤
+│ Barkley  │ 19630220 │ Philadelphia │
+├──────────┼──────────┼──────────────┤
+│ Pippen   │ 19650925 │ Chicago      │
+├──────────┼──────────┼──────────────┤
+│ Robinson │ 19650806 │ San Antonio  │
+└──────────┴──────────┴──────────────┘
+```
 
 ### JSON
 
